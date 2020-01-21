@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 400;
+    /* background: rgb(174,202,238);
+    background: linear-gradient(90deg, rgba(174,202,238,1) 0%, rgba(33,127,255,1) 100%); */
+    background: rgb(174,202,238);
+    background: linear-gradient(90deg, rgba(174,202,238,1) 0%, rgba(238,174,202,1) 100%);
+}
+
+.space {
+    display: flex;
+    justify-content: space-between;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.m0 {
+    margin: 0;   
+}
+
+.p3 {
+    padding-top: 5rem;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
