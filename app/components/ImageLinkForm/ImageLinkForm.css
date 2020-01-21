@@ -1,0 +1,11 @@
+.image-form-container {
+    padding: 3rem 1rem 1rem 1rem;
+}
+
+form {
+    width: 70rem;
+}
+
+input {
+    height: 5rem;
+}

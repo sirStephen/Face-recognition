@@ -1,0 +1,12 @@
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-self: center;
+}
+
+.btn-black {
+    background-color: black;
+    color: white;
+    border-width: 0;
+    height: 5rem;
+}
