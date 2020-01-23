@@ -47,3 +47,7 @@ body {
     left: 0;
     z-index: -1;
 }
+
+.m1 {
+    margin: .5rem;
+}
