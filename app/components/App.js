@@ -75,7 +75,7 @@ class App extends React.Component {
             imageUrl: this.state.input
         })
 
-        fetch('http://localhost:3001/imageurl', {
+        fetch('https://face-recognitionapi.herokuapp.com/imageurl', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -85,7 +85,7 @@ class App extends React.Component {
         .then(response => response.json())
         .then((response) => {
             if (response) {
-                fetch('http://localhost:3001/image', {
+                fetch('https://face-recognitionapi.herokuapp.com/image', {
                     method: 'PUT',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({

@@ -24,7 +24,7 @@ class Login extends React.Component {
 
     onSubmitLogin = (event) => {
         event.preventDefault();
-        fetch('http://localhost:3001/login', {
+        fetch('https://face-recognitionapi.herokuapp.com/login', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
