@@ -2,7 +2,7 @@ const particles = () => {
     return params={
         line_linked: {
             number: {
-                value: 30,
+                value: 100,
                 density: {
                     enable: true,
                     value_area: 800

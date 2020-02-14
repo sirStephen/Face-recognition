@@ -13,7 +13,7 @@ import './App.css';
 const initialState = {
     input: '',
     imageUrl: '',
-    box: {},
+    box: [],
     route: 'login',
     isLoggedin: false,
     user: {
@@ -44,22 +44,28 @@ class App extends React.Component {
     }
 
     calculateFaceLocation = (data) => {
-        const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
+        console.log(data)
+        const clarifaiFaces = data.outputs[0].data.regions;
         const image = document.getElementById('inputImage');
         const width = Number(image.width);
         const height = Number(image.height);
+
+        return  clarifaiFaces.map(region => {
+            console.log(region)
+            const boundingBox = region.region_info.bounding_box;
+            return{
+                leftCol: boundingBox.left_col * width,
+                topRow: boundingBox.top_row * height,
+                rightCol: width - (boundingBox.right_col * width),
+                bottomRow: height - (boundingBox.bottom_row * height)
+            }
+        })
         
-        return {
-            leftCol: clarifaiFace.left_col * width,
-            topRow: clarifaiFace.top_row * height,
-            rightCol: width - (clarifaiFace.right_col * width),
-            bottomRow: height - (clarifaiFace.bottom_row * height)
-        }
     }
 
     displayFaceBox = (box) => {
         this.setState({
-            box
+            box: box
         })
     }
 
@@ -144,7 +150,7 @@ class App extends React.Component {
                             onButtonSubmit={this.onButtonSubmit}
                         />
                         <FaceRecognition 
-                            box={box}
+                            boxes={box}
                             imageUrl={imageUrl} 
                         />
                     </div>
